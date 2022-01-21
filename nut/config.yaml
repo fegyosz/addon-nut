@@ -1,5 +1,5 @@
 ---
-name: Network UPS Tools
+name: Network UPS Tools (socat)
 version: dev
 slug: nut
 description: Manage battery backup (UPS) devices
