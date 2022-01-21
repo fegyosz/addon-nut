@@ -11,6 +11,7 @@ RUN \
         nut-snmp=2.7.4-13 \
         nut-xml=2.7.4-13 \
         usbutils=1:013-3 \
+        socat \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
