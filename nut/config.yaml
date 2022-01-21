@@ -64,7 +64,7 @@ schema:
   leave_front_door_open: bool?
 socat:
   enabled: bool?
-  master: str?,
-  slave: str?,
-  options: str?,
+  master: str?
+  slave: str?
+  options: str?
   log: bool?
