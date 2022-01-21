@@ -11,6 +11,7 @@ if bashio::config.true 'socat.enabled'; then
     if [[ -z "$SOCAT_SLAVE" ]]; then
     bashio::exit.nok "Socat is enabled but not started because no slave address specified"
     fi
+    touch /dev/virtualcom0
 else
     bashio::log.info "Socat not enabled, marking service as down"
     touch /etc/services.d/socat/down
