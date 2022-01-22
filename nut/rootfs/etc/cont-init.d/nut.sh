@@ -5,6 +5,7 @@
 # ==============================================================================
 readonly USERS_CONF=/etc/nut/upsd.users
 readonly UPSD_CONF=/etc/nut/upsd.conf
+readonly UPS_CONF=/etc/nut/ups.conf
 declare nutmode
 declare password
 declare shutdowncmd
@@ -92,6 +93,12 @@ if bashio::config.equals 'mode' 'netserver' ;then
     if bashio::config.has_value "upsd_maxage"; then
         maxage=$(bashio::config "upsd_maxage")
         echo "MAXAGE ${maxage}" >> "${UPSD_CONF}"
+    fi
+
+    if bashio::config.has_value "pollinterval"; then
+        pollinterval=$(bashio::config "pollinterval")
+        echo "pollinterval ${pollinterval}" >> "${UPS_CONF}"
+        echo "" >> "${UPS_CONF}"
     fi
 
     for device in $(bashio::config "devices|keys"); do
