@@ -1,6 +1,6 @@
 ---
 name: Network UPS Tools (socat)
-version: 0.0.1
+version: dev
 slug: nut
 description: Manage battery backup (UPS) devices
 url: https://github.com/fegyosz/addon-nut
