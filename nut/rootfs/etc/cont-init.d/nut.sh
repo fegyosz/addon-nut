@@ -117,14 +117,7 @@ if bashio::config.equals 'mode' 'netserver' ;then
         echo "MONITOR ${upsname}@localhost 1 upsmonmaster ${upsmonpwd} master" \
             >> /etc/nut/upsmon.conf
     done
-
-    bashio::log.info "Starting the UPS drivers..."
-    # Run upsdrvctl
-    if bashio::debug; then
-        upsdrvctl -u root -D start
-    else
-        upsdrvctl -u root start
-    fi
+    
 fi
 
 shutdowncmd="\"s6-svscanctl -t /var/run/s6/services\""
