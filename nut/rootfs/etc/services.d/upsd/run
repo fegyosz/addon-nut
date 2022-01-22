@@ -7,5 +7,13 @@ if ! bashio::config.equals 'mode' 'netserver' ;then
     exec sleep 864000
 fi
 
+bashio::log.info "Starting the UPS drivers..."
+# Run upsdrvctl
+if bashio::debug; then
+    upsdrvctl -u root -D start
+else
+    upsdrvctl -u root start
+fi
+
 bashio::log.info "Starting the UPS information server..."
 exec upsd -D -u root
