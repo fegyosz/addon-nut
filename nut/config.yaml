@@ -1,6 +1,6 @@
 ---
 name: Network UPS Tools (socat)
-version: dev
+version: 0.0.1
 slug: nut
 description: Manage battery backup (UPS) devices
 url: https://github.com/fegyosz/addon-nut
@@ -18,7 +18,7 @@ hassio_api: true
 hassio_role: manager
 homeassistant_api: true
 ports:
-  3493/tcp: null
+  3493/tcp: 3493
 ports_description:
   3493/tcp: Network UPS Tools
 options:
