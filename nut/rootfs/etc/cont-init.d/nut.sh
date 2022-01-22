@@ -25,7 +25,7 @@ if bashio::config.true 'socat.enabled'; then
     bashio::log.blue "Slave:       $SOCAT_SLAVE"
 
     bashio::log.info "Starting socat process ..."
-    exec socat $SOCAT_OPTIONS $SOCAT_MASTER $SOCAT_SLAVE
+    exec socat $SOCAT_OPTIONS $SOCAT_MASTER $SOCAT_SLAVE &
 
     bashio::log.debug "Modifying process for logging if required"
     if bashio::config.true 'socat.log'; then
